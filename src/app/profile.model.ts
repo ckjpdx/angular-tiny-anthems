@@ -1,8 +1,8 @@
 export class Profile {
   constructor (
     public name: string,
-    public dateOfBirth: string,
-    public locaitonOfBirth: string,
+    public birthDate: string,
+    public birthLocation: string,
     public favoriteAnimal: string,
     public profession: string
   ) {}

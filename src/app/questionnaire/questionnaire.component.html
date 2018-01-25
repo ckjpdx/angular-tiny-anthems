@@ -1,9 +1,9 @@
 <h2>Questionnaire</h2>
 <form>
   <input #name type="text" placeholder="Name of person to enshrine">
-  <input #dateOfBirth type="text" placeholder="Date they were born">
-  <input #locaitonOfBirth type="text" placeholder="Location they were born">
+  <input #birthDate type="text" placeholder="Date they were born">
+  <input #birthLocation type="text" placeholder="Location they were born">
   <input #favoriteAnimal type="text" placeholder="Favorite animal">
   <input #profession type="text" placeholder="Profession">
 </form>
-<button (click)="submitForm(name.value, dateOfBirth.value, locaitonOfBirth.value, favoriteAnimal.value, profession.value)">Submit</button>
+<button (click)="submitForm(name.value, birthDate.value, birthLocation.value, favoriteAnimal.value, profession.value)">Submit</button>
