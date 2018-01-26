@@ -14,7 +14,7 @@ import { LandingComponent } from './landing/landing.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { FaqComponent } from './faq/faq.component';
 import { AdminComponent } from './admin/admin.component';
-// import { LogonComponent } from './logon/logon.component';
+import { LogonComponent } from './logon/logon.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -30,7 +30,7 @@ export const firebaseConfig = {
     QuestionnaireComponent,
     FaqComponent,
     AdminComponent,
-    // LogonComponent
+    LogonComponent
   ],
   imports: [
     BrowserModule,
