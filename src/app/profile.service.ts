@@ -10,7 +10,7 @@ export class ProfileService {
     this.profiles = database.list('profiles');
   }
 
-  addProfile(newProfile: Profile){
+  addProfile(newProfile: Profile) {
     this.profiles.push(newProfile);
   }
 }
