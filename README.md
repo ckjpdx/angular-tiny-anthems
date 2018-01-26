@@ -2,25 +2,53 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
+## Installation
+In terminal:
+
+1. $ git clone https://github.com/noodlebrains/tiny-anthems.git
+1. $ cd tiny-anthems
+1. $ npm i
+1. $ cd src/app
+1. $ touch api-keys.ts
+1. (after creating a firebase project, open 'add firebase to your web app' via their website console and format their info in the following way and save into api-keys.ts):
+```
+var masterFirebaseConfig = {
+    apiKey: "xxxxx",
+    authDomain: "xxxxx.firebaseapp.com",
+    databaseURL: "https://xxxxx.firebaseio.com",
+    projectId: "xxxxx",
+    storageBucket: "xxxxx.appspot.com",
+    messagingSenderId: "xxxxx"
+  };
+  firebase.initializeApp(masterFirebaseConfig);
+  ```
+1. $ cd ../..
+1. $ ng serve --open
+
 ## Self Assessment
-
-###
-
-State of the self:
-1.
-1.
 
 ### My Main Flaw: Patience
 
-The thing I need to work on most is problem solving things that are not readily available from documentation or tutorials. I started an Angular project that I wanted to incorporate user account creation and login, but quickly found that I'd have to read between the lines in order to get it to work. Updates to Firebase technology meant that Angular 2 tutorials were not entirely accurate anymore. After an hour of trying to force it to work, I discovered something called a "migration guide", something I had not heard of before. This was apparently a way to tie loose ends together in the documentation, but it requires reading and careful consideration to exact the solution amidst the chaos. 
+The thing I need to work on most is problem solving things that are not readily available from documentation or tutorials. I started an Angular project that I wanted to incorporate user account creation and login, but quickly found that I'd have to read between the lines in order to get it to work. Updates to Firebase technology meant that Angular 2 tutorials were not entirely accurate anymore. After an hour of trying to force it to work, I discovered something called a "migration guide", something I had not heard of before. This was apparently a way to tie loose ends together in the documentation, but it requires reading and careful consideration to exact the solution amidst the chaos.
 
-### My Mission: Dig Deeper
+I decided to work on this issue on Friday because it would require both digging deep into the problem for a solution and careful documentation in this README, two things I tend to avoid.
 
-Angular Firebase modules have been split up, and there's no easy copy and paste implementation for user account creation.
+## Problem: firebase not defined
 
-How to solve it
+At the time of my first commit on Friday, there is a console error that reads:
 
+> Uncaught ReferenceError: firebase is not defined
 
+> webpack-internal:///../../../../../src/app/api-keys.ts:9
+
+This error occurs after following the instructions on Firebase's documentation. When researching the problem, it appears that since angularfire2@^4.0.0-rc.1 their modules have been rearranged to make things tree-shakeable. 
+
+### Approach: Angular migration guide
+
+Angular Firebase modules have been split up, and there's no easy copy and paste implementation for user account creation. I will need to follow Angular's migration guide and other resources to try to get the package imports to work properly.
+
+### Solution: firebase not defined
+???
 
 ## Angular 2 Info
 
