@@ -1,4 +1,5 @@
-# TinyAnthems
+# Tiny Anthems
+_this is a project made for a musician to store their custom made songs for clients on the site and allow each client to login and access their specific song files._
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
@@ -12,7 +13,7 @@ In terminal:
 1. $ touch api-keys.ts
 1. (after creating a firebase project, open 'add firebase to your web app' via their website console and format their info in the following way and save into api-keys.ts):
 ```
-var masterFirebaseConfig = {
+export let masterFirebaseConfig = {
     apiKey: "xxxxx",
     authDomain: "xxxxx.firebaseapp.com",
     databaseURL: "https://xxxxx.firebaseio.com",
@@ -33,7 +34,7 @@ The thing I need to work on most is problem solving things that are not readily 
 
 I decided to work on this issue on Friday because it would require both digging deep into the problem for a solution and careful documentation in this README, two things I tend to avoid.
 
-## Problem: firebase not defined
+### Problem: firebase not defined
 
 At the time of my first commit on Friday, there is a console error that reads:
 
@@ -41,14 +42,33 @@ At the time of my first commit on Friday, there is a console error that reads:
 
 > webpack-internal:///../../../../../src/app/api-keys.ts:9
 
-This error occurs after following the instructions on Firebase's documentation. When researching the problem, it appears that since angularfire2@^4.0.0-rc.1 their modules have been rearranged to make things tree-shakeable. 
+and a terminal error of:
 
-### Approach: Angular migration guide
+> ERROR in src/app/api-keys.ts(9,1): error TS2304: Cannot find name 'firebase'.
+
+> src/app/logon/logon.component.ts(17,5): error TS2304: Cannot find name 'firebase'.
+
+
+This error occurs after following the instructions on Firebase's documentation. When researching the problem, it appears that since angularfire2@^4.0.0-rc.1 their modules have been rearranged to make things tree-shakeable.
+
+#### Approach: Angular migration guide
 
 Angular Firebase modules have been split up, and there's no easy copy and paste implementation for user account creation. I will need to follow Angular's migration guide and other resources to try to get the package imports to work properly.
 
-### Solution: firebase not defined
-???
+Migration guide proved too complicated and in some cases unnecessary (not all code needed migrating)
+
+10:27am
+Instead I scanned google results trying various things until finally I found a solution so simple I'm wondering why the documentation failed to mention it:
+```
+import * as firebase from 'firebase';
+```
+adding this at the top of the api-keys file seems to have fixed the issue: a test account now exists on the server.
+
+11:24am
+But this only works some of the time. The first time the page loads it works, until the server is relaunched, then it breaks. If the imports on the LogonComponent ts file change, it works again, until relaunched, when it breaks.
+
+
+#### Solution: firebase not defined
 
 ## Angular 2 Info
 
