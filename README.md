@@ -51,7 +51,7 @@ and a terminal error of:
 
 This error occurs after following the instructions on Firebase's documentation. When researching the problem, it appears that since angularfire2@^4.0.0-rc.1 their modules have been rearranged to make things tree-shakeable.
 
-#### Approach: Angular migration guide
+#### Approach: Angular/Angularfire migration
 
 Angular Firebase modules have been split up, and there's no easy copy and paste implementation for user account creation. I will need to follow Angular's migration guide and other resources to try to get the package imports to work properly.
 
@@ -66,6 +66,9 @@ adding this at the top of the api-keys file seems to have fixed the issue: a tes
 
 11:24am
 But this only works some of the time. The first time the page loads it works, until the server is relaunched, then it breaks. If the imports on the LogonComponent ts file change, it works again, until relaunched, when it breaks.
+
+11:40am
+Eventually google turned up a post about a similar issue that was a result of an outdated Angularfire version. After several attempts to get the new version with npm, angularfire2@5.0.0-rc.6 finally installed. This also required changing some imports to use deprecated libraries in Angularfire.
 
 
 #### Solution: firebase not defined

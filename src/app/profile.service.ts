@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Profile } from './profile.model';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
 
 @Injectable()
 export class ProfileService {
