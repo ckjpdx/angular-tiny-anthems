@@ -1,0 +1,5 @@
+<label>email:</label>
+<input #email value="myemail@email.com">
+<label>password:</label>
+<input #password value="12345">
+<button (click)="createAccount(email.value, password.value)">Create Account</button>

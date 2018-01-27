@@ -55,7 +55,11 @@ This error occurs after following the instructions on Firebase's documentation. 
 
 Angular Firebase modules have been split up, and there's no easy copy and paste implementation for user account creation. I will need to follow Angular's migration guide and other resources to try to get the package imports to work properly.
 
-Migration guide proved too complicated and in some cases unnecessary (not all code needed migrating)
+9:15am
+Start migration guide
+
+9:44am
+Migration guide proved too complicated and in some cases unnecessary (not all code needed migrating) and thus I have resorted to reading random posts on the internet to try to figure out what the problem is exactly.
 
 10:27am
 Instead I scanned google results trying various things until finally I found a solution so simple I'm wondering why the documentation failed to mention it:
@@ -67,11 +71,32 @@ adding this at the top of the api-keys file seems to have fixed the issue: a tes
 11:24am
 But this only works some of the time. The first time the page loads it works, until the server is relaunched, then it breaks. If the imports on the LogonComponent ts file change, it works again, until relaunched, when it breaks.
 
+#### Solution: firebase not defined
 11:40am
 Eventually google turned up a post about a similar issue that was a result of an outdated Angularfire version. After several attempts to get the new version with npm, angularfire2@5.0.0-rc.6 finally installed. This also required changing some imports to use deprecated libraries in Angularfire.
 
+### Problem: ERROR Error: Uncaught (in promise): Error: StaticInjectorError(AppModule)[LogonComponent -> AngularFireAuth]:
 
-#### Solution: firebase not defined
+1:19pm
+I cannot find any help on this and I've decided to find a video tutorial or some complete knowledge and start over.
+
+1:38pm
+Finally for the first time landed on angularfirebase.com to follow an official lesson instead of googling around the world forever and getting lost in outdated guides.
+
+1:45pm
+Lunch Time
+
+2:41pm
+I have returned and realized that I fell into the very thing I aimed to avoid today: getting impatient and spazzing out. I have decided that I may not accomplish the thing I wanted to by the end of the day but I will calmly advance my knowledge of the subject by reading a reliable source, angularfirebase.com/lessons.
+
+3:43pm
+Turns out I need to pay for angularfirebase.com so I returned to firebase.google.com to read lesson on auth: https://firebase.google.com/docs/auth/web/password-auth
+
+4:09pm
+Pretty exhausted at this point with almost nothing to show for it. I feel that if I had spent all the time I did learning from firebase.google.com documentation instead of on google frantically looking around forums for a fix I'd probably have something to show for it by now.
+
+4:50pm
+I really thought I'd have at least a user account creation thing completed by the end of the day, but instead I have nothing. Literally had to undo everything I tried today because of how confusing and misleading all the solutions I found online were. Deciding to do something that would test my patience and ended up being a self-fulfilling prophecy. I'm starting to think the progress I need to make is more emotional than anything. I tend to enjoy coding so much that it feels like a game at times and when I get frustrated it's because there is an assumption that what I'm doing should be fun. When a serious problem requires work to implement a proper solution I need to switch gears and treat it as a job.
 
 ## Angular 2 Info
 

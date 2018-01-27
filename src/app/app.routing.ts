@@ -4,7 +4,7 @@ import { LandingComponent } from './landing/landing.component';
 import { FaqComponent } from './faq/faq.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { AdminComponent } from './admin/admin.component';
-import { LogonComponent } from './logon/logon.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   {
@@ -24,8 +24,8 @@ const appRoutes: Routes = [
     component: AdminComponent
   },
   {
-    path: 'logon',
-    component: LogonComponent
+    path: 'login',
+    component: LoginComponent
   },
 
 ];
