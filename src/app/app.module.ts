@@ -1,7 +1,4 @@
 import { masterFirebaseConfig } from './api-keys';
-// import { AngularFireModule } from 'angularfire2';
-// import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { HttpClientModule } from '@angular/common/http';
 import { ProfileService } from './profile.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -10,6 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+
 import { FormsModule } from '@angular/forms';
 
 import { routing } from './app.routing';
@@ -26,9 +24,7 @@ export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
   databaseURL: masterFirebaseConfig.databaseURL,
-  // projectId: masterFirebaseConfig.projectId,
   storageBucket: masterFirebaseConfig.storageBucket,
-  // messagingSenderId: masterFirebaseConfig.messagingSenderId
 };
 
 @NgModule({
