@@ -1,5 +1,6 @@
 # Tiny Anthems
-_this is a project made for a musician to store their custom made songs for clients on the site and allow each client to login and access their specific song files._
+_this is incomplete!_
+_this is a project made for a musician to store their custom made songs for clients on the site and allow each client to login and access their specific song files. It was an opportunity to explore Angular CLI and Firebase_
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
